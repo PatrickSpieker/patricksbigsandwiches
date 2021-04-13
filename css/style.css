@@ -1,0 +1,23 @@
+body,
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+#mainContentContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  max-height: 600px;
+  max-width: 600px;
+  object-fit: contain;
+}
+
+.sandwich {
+  position: absolute;
+  height: 33px;
+}
