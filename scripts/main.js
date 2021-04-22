@@ -6,6 +6,7 @@ const renderSandwich = (document, x, y) => {
   elem.src = "assets/sandwich.png";
   elem.setAttribute("class", "sandwich");
   elem.setAttribute("id", `sandwich-${sandwichCount}`);
+  elem.setAttribute("draggable", false);
   elem.style.top = `${y - 12}px`;
   elem.style.left = `${x - 12}px`;
   document.getElementById("mainContentContainer").appendChild(elem);
