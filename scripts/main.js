@@ -1,4 +1,5 @@
 let sandwichCount = 0;
+let dragging = false;
 
 const renderSandwich = (document, x, y) => {
   var elem = document.createElement("img");
@@ -11,10 +12,25 @@ const renderSandwich = (document, x, y) => {
 };
 
 document.addEventListener(
-    "click",
-    function (e) {
-      renderSandwich(document, e.clientX, e.clientY);
-      sandwichCount++;
-    },
-    false
-  );
+  "click",
+  function (e) {
+    renderSandwich(document, e.clientX, e.clientY);
+    sandwichCount++;
+  },
+  false
+);
+
+document.addEventListener("mousedown", () => {
+  dragging = true;
+});
+
+document.addEventListener("mouseup", () => {
+  dragging = false;
+});
+
+document.addEventListener("mousemove", function (e) {
+  if (dragging) {
+    renderSandwich(document, e.clientX, e.clientY);
+    sandwichCount++;
+  }
+});
