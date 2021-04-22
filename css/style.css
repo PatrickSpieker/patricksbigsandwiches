@@ -24,8 +24,16 @@ html {
 }
 
 .sandwich {
-  position: absolute;
   height: 33px;
+}
+
+.pogpete {
+  height: 80px;
+  z-index: 100000000;
+}
+
+.sandwichLike {
+  position: absolute;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-drag: none;
