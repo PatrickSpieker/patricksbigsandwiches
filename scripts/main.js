@@ -1,6 +1,5 @@
 let sandwichCount = 0;
 let dragging = false;
-let pogpeteratio = 1;
 
 const lastDrawnCoors = [0, 0];
 
@@ -8,12 +7,15 @@ const renderSandwich = (document, x, y) => {
   var elem = document.createElement("img");
 
   // randomly choose pogpete vs. sandwich based on ratio
-  if (Math.random() * 10 < Math.sqrt(pogpeteratio)) {
-    elem.src = "assets/pogpete.png";
-    elem.setAttribute("class", "pogpete");
-  } else {
+  const first = Math.random() * 10;
+  const second = Math.sqrt(pogPeteSlider.value);
+  console.log(first, second);
+  if (first > second) {
     elem.src = "assets/sandwich.png";
     elem.setAttribute("class", "sandwich");
+  } else {
+    elem.src = "assets/pogpete.png";
+    elem.setAttribute("class", "pogpete");
   }
 
   elem.setAttribute("class", elem.className + " sandwichLike");
@@ -49,7 +51,6 @@ document.addEventListener("mousemove", function (e) {
       Math.abs(x - lastDrawnCoors[0]) < 5 ||
       Math.abs(y - lastDrawnCoors[1]) < 5
     ) {
-      console.log("Returning", x, lastDrawnCoors[0], y, lastDrawnCoors[1]);
     } else {
       lastDrawnCoors[0] = x;
       lastDrawnCoors[1] = y;
@@ -60,28 +61,3 @@ document.addEventListener("mousemove", function (e) {
 });
 
 const pogPeteSlider = document.getElementById("pogpeteslider");
-
-pogPeteSlider.oninput = () => {
-  pogpeteratio = pogPeteSlider.value;
-};
-
-const throttle = (func, limit) => {
-  let lastFunc;
-  let lastRan;
-  return function () {
-    const context = this;
-    const args = arguments;
-    if (!lastRan) {
-      func.apply(context, args);
-      lastRan = Date.now();
-    } else {
-      clearTimeout(lastFunc);
-      lastFunc = setTimeout(function () {
-        if (Date.now() - lastRan >= limit) {
-          func.apply(context, args);
-          lastRan = Date.now();
-        }
-      }, limit - (Date.now() - lastRan));
-    }
-  };
-};

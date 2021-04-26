@@ -25,12 +25,11 @@ html {
 }
 
 .sandwich {
-  height: 33px;
+  height: 35px;
 }
 
 .pogpete {
-  height: 80px;
-  z-index: 100000000;
+  height: 60px;
 }
 
 .sandwichLike {
@@ -71,17 +70,25 @@ html {
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 25px;
-  height: 25px;
-  background: #af4c6d;
+  width: 45px;
+  height: 45px;
   cursor: pointer;
+  background-image: url("../assets/sliderSlider.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: none;
 }
 
 .slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background: #af4c99;
+  width: 45px;
+  height: 45px;
   cursor: pointer;
+  background-image: url("../assets/sliderSlider.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: none;
 }
 
 .label {
@@ -89,7 +96,6 @@ html {
   padding: 4px;
   margin: 5px;
   border-radius: 4px;
-
 }
 
 #left-label {
