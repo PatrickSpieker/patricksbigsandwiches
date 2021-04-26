@@ -6,6 +6,7 @@ html {
 
 #mainContentContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -24,12 +25,11 @@ html {
 }
 
 .sandwich {
-  height: 33px;
+  height: 35px;
 }
 
 .pogpete {
-  height: 80px;
-  z-index: 100000000;
+  height: 60px;
 }
 
 .sandwichLike {
@@ -40,4 +40,71 @@ html {
   -webkit-user-select: none;
   -ms-user-select: none;
   pointer-events: none;
+}
+
+.slidecontainer {
+  z-index: 100000001;
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.slider {
+  display: block;
+  margin: auto;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  background-image: url("../assets/sliderSlider.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: none;
+}
+
+.slider::-moz-range-thumb {
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  background-image: url("../assets/sliderSlider.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: none;
+}
+
+.label {
+  background-color: #d3aaca;
+  padding: 4px;
+  margin: 5px;
+  border-radius: 4px;
+}
+
+#left-label {
+  float: left;
+}
+
+#right-label {
+  float: right;
+}
+#labels {
+  width: 100%;
 }
