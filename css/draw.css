@@ -1,0 +1,21 @@
+#canvas {
+  border: solid;
+  border-color: black;
+  width: 40vw;
+  height: 40vw;
+}
+
+.pixel {
+  background-color: #000000;
+  height: 6px;
+  width: 6px;
+  border-radius: 3px;
+  z-index: 10;
+  position: absolute;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+}
