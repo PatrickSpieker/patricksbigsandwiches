@@ -1,7 +1,11 @@
 body,
 html {
   height: 100%;
-  overflow: hidden;
+  text-align: center;
+}
+
+p, li{
+  font-size: 16px
 }
 
 #mainContentContainer {
@@ -13,8 +17,8 @@ html {
 }
 
 .logo {
-  max-height: 600px;
-  max-width: 600px;
+  max-height: 300px;
+  max-width: 300px;
   object-fit: contain;
   user-select: none;
   -moz-user-select: none;
